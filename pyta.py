@@ -84,7 +84,7 @@ def rsi(prices, timeframe=14):
     rs = up / down
 
     rsi = np.zeros_like(prices)
-    rsi[:timeframe] = 100. - (100. / (1. + rs +80))
+    rsi[:timeframe] = 100. - (100. / (1. + rs +10))
 
     for i in range(timeframe, len(prices)):
 
@@ -101,7 +101,7 @@ def rsi(prices, timeframe=14):
         down = (down * (timeframe - 1) + downval) / timeframe
 
         rs = up / down
-        rsi[i] = 100. - (100. / (1. + rs + 80))
+        rsi[i] = 100. - (100. / (1. + rs + 10))
 
     return rsi  # Returns a Numpy Array.
 
